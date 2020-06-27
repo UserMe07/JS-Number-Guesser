@@ -9,13 +9,10 @@ function generateTarget() {
 };
 
 function compareGuesses(humanGuess, computerGuess, targetNumber) {
-  if (Math.abs(targetNumber - humanGuess) > Math.abs(targetNumber - computerGuess)) {
+  if (Math.abs(targetNumber - humanGuess) < Math.abs(targetNumber - computerGuess)) {
     return false;
   }
-  else if (Math.abs(targetNumber - humanGuess) < Math.abs(targetNumber - computerGuess)) {
-    return true;
-  }
-  else {
+  else (Math.abs(targetNumber - humanGuess) > Math.abs(targetNumber - computerGuess)) {
     return true;
   }
 };
