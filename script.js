@@ -8,14 +8,13 @@ function generateTarget() {
   return Math.floor(Math.random() * 10);
 };
 
-function compareGuesses(humanGuess, computerGuess, targetNumber) {
-  if (Math.abs(targetNumber - humanGuess) < Math.abs(targetNumber - computerGuess)) {
-    return false;
-  }
-  else (Math.abs(targetNumber - humanGuess) > Math.abs(targetNumber - computerGuess)) {
-    return true;
-  }
-};
+function compareGuesses(humanGuess, computerGuess, targetNumber){
+  let targetDifference1 = Math.abs(humanGuess - targetNumber);
+  let targetDifference2 = Math.abs(computerGuess - targetNumber);
+  let closestGuess = ( targetDifference1 > targetDifference2 );
+  
+  return (targetDifference1 == targetDifference2) ? true : closestGuess;
+}
 
 function updateScore(winner) {
   if (winner === 'human') {
